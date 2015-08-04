@@ -8,8 +8,8 @@ angular.module('bb.views.feeds', ['ngRoute', 'bb.views.publish'])
     })
   }])
   .controller('FeedsCtrl', ['$scope', '$cookies', 'ngDialog', 'account',
-    'requester',
-    function($scope, $cookies, ngDialog, account, requester) {
+    'requester','$modal',
+    function($scope, $cookies, ngDialog, account, requester, $modal) {
       $scope.feeds = [];
       $scope.factoryId = 0;
 
@@ -83,11 +83,22 @@ angular.module('bb.views.feeds', ['ngRoute', 'bb.views.publish'])
 
       $scope.comments = function(feed) {
         $scope.params = [feed.id, feed.isHot, feed.isRepost, feed.viewType, 1]
-        ngDialog.open({
-          templateUrl: 'views/feeds/comments.html',
-          scope: $scope,
-          controller: 'CommentsCtrl'
-        })
+
+        // ngDialog.open({
+        //   templateUrl: 'views/feeds/comments.html',
+        //   scope: $scope,
+        //   controller: 'CommentsCtrl'
+        // })
+        var modalInstance = $modal.open({
+          templateUrl: 'myModalContent.html',
+          controller: 'CommentsCtrl',
+          size: 'l',
+          resolve: {
+            params: function () {
+              return $scope.params;
+            },
+          }
+        });
       };
 
       $scope.showPublish = function() {

@@ -6,9 +6,9 @@ angular.module('bb.views.comments', ['ngRoute'])
       return input.slice(2);
     }
   })
-  .controller('CommentsCtrl', ['$scope', 'ngDialog', 'requester', function($scope, ngDialog, requester) {
+  .controller('CommentsCtrl', ['$scope', 'ngDialog', 'requester', 'params', function($scope, ngDialog, requester, params) {
     $scope.comments = [];
-
+    $scope.params = params;
 
     $scope.fetch = function() {
       $scope.loading = true;

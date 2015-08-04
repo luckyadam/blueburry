@@ -11,5 +11,6 @@ angular.module('bb', [
   'bb.views.publish',
   'bb.account',
   'bb.requester',
-  'bb.version'
+  'bb.version',
+  'ui.bootstrap'
 ]);
