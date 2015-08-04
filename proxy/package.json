@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "devDependencies": {
+    "http-proxy": "^1.11.1",
+    "node-http-proxy": "^0.2.3"
+  },
+  "dependencies": {
+    "http-proxy": "^1.11.1"
+  }
+}
