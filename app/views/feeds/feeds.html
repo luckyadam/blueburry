@@ -1,0 +1,76 @@
+<div class="row sub-header center-block">
+    <h2>Feeds</h2>
+
+    <div class="col-md-2 col-md-offset-5">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              最近访问
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li ng-repeat="recent in recents" ng-click="refresh(recent)"><a>{{ recent }}</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <form class="form-inline col-md-5">
+        <div class="form-group">
+            <label>工厂ID</label>
+            <input class="form-control" type="text" ng-model="factoryId"/>
+        </div>
+        <button class="btn btn-material-purple-600" type="submit" ng-click="refresh()">刷新</button>
+    </form>
+</div>
+
+<div class="row">
+    <h4 class="well text-center center-block" ng-show="subInfo">{{ subInfo }}</h4>
+</div>
+
+<div class="row">
+    <ul class="feeds center-block">
+        <li ng-repeat="feed in feeds">
+            <div class="panel panel-default feed" ng-show="feed.type == 1001">
+                <div ng-show="feed.userName" class="panel-heading">
+                    {{ feed.userName }}
+                    <span><img width=16 height=16 src="{{feed.levelIcon}}"</span>
+                </div>
+                <div class="panel-body">
+                    <img ng-show="feed.bgUrl" src="{{ feed.bgUrl }}">
+
+                    <div>
+                        <p>{{ feed.content }}</p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="btn-group">
+                        <button class="btn btn-default" ng-click="comments(feed)">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 评论({{ feed.countComment }})
+                        </button>
+                        <button class="btn btn-default" ng-click="praise(feed)" ng-show="feed.praised == 0">
+                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 赞({{ feed.countPraise }})
+                        </button>
+                        <button class="btn btn-material-purple-600" ng-show="feed.praised == 1">
+                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 已赞({{ feed.countPraise }})
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+
+</div>
+<div class="row">
+    <p class="col-md-4 col-md-offset-4 alert alert-warning" ng-show="feeds.length == 0">请输入工厂ID</p>
+</div>
+<div class="row">
+    <button ng-show="feeds.length > 0" class="btn btn-primary center-block" ng-click="more()">加载更多</button>
+</div>
+
+<div class="publish">
+  <button ng-click="showPublish()" class="btn btn-fab btn-material-purple-600 shadow-z-5">
+    <i class="mdi-image-edit">
+    </i>
+  </button>
+</div>

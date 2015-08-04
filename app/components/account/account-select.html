@@ -1,0 +1,11 @@
+<li ng-controller="Controller"><p class="navbar-text">当前账号：{{ userid }}</p></li>
+<li ng-controller="Controller" class="dropdown">
+        <a class="dropdown-toggle" role="button" id="dropdownMenu1" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="true">
+            选择账号
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li ng-repeat="account in accounts"><a ng-click="select(account)">{{account.userid}}</a></li>
+        </ul>
+</li>

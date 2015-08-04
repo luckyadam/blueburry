@@ -1,0 +1,30 @@
+<div class="comments">
+    <p class="text-center" ng-show="loading">加载中...</p>
+
+    <p class="text-center" ng-show="!loading && comments.length == 0">没有评论</p>
+
+    <ul>
+        <li ng-repeat="comment in comments">
+          <div class="row">
+            <button class="portrait btn btn-fab btn-default col-md-3">
+              <span class="portrait" style="color: #{{ comment.avatarColor | color }}">{{ comment.userAvatar }}</span>
+            </button>
+            <div class="col-md-9">
+              <p class="content">{{ comment.content }}</p>
+              <p class="info">{{ comment.commentViewTime }} <span class="pull-right">{{ comment.userName }}</span></p>
+            </div>
+          </div>
+        </li>
+    </ul>
+
+    <form class="form">
+        <div class="form-group">
+            <textarea ng-model="text" class="form-control" type="text"></textarea>
+        </div>
+        <div class="form-group">
+            <label>实名</label>
+            <input type="checkbox"/>
+        </div>
+        <button ng-click="postComment()" class="btn btn-primary" ng-hide="loading">评论</button>
+    </form>
+</div>

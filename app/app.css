@@ -1,0 +1,108 @@
+/* app css stylesheet */
+
+@font-face{
+	font-family: 'PortraitFont';
+	src: url('fonts/fontello.ttf') format('truetype'),
+	     url('fonts/fontello.svg#webfont') format('svg');
+}
+
+header {
+  padding: 2em;
+  margin: auto auto 2em;
+  border-bottom: 0.1em solid black;
+}
+
+div.ngdialog-content div.comments ul li span.portrait {
+
+}
+
+#container {
+  margin-top: 60px;
+}
+
+.account-select {
+  display: inline;
+  float: right;
+}
+
+.well.text-center {
+    width: 40%;
+    min-width: 200px;
+}
+
+.sub-header {
+    width: 80%;
+    max-width: 800px;
+    height: 120px;
+}
+
+.feeds {
+  list-style-type: none;
+}
+
+.feeds li {
+  float: left;
+  margin: 1em;
+  min-width: 200px;
+  width: 30%;
+}
+
+.feeds li div.feed {
+}
+
+.feeds li div.feed div.panel-body {
+    min-height: 150px;
+}
+
+.feeds li div.feed div.panel-body img {
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+.comments ul {
+    list-style-type: none;
+}
+
+.comments ul li div div {
+    min-height: 100px;
+    border-bottom: solid 1px #ccc;
+}
+
+.comments ul li p.content {
+    padding-top: 8px;
+    margin: 0;
+}
+
+.comments ul li p.info {
+    font-size: 12px;
+    font-color: #ccc;
+    padding-bottom: 8px;
+    padding-top: 12px;
+    margin: 0;
+}
+
+.comments ul li button.portrait {
+  margin-left: 8px;
+  margin-top: 16px;
+  margin-right: 16px;
+}
+
+.comments ul li button.portrait span {
+	font-family: 'PortraitFont', 'RobotoDraft', 'Roboto';
+  font-size: 26px;
+  line-height: 26px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.comments form.form-inline div.form-group textarea {
+    width: 100%;
+}
+
+.publish {
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+}

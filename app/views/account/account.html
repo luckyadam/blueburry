@@ -1,0 +1,36 @@
+<div ng-controller="AccountCtrl">
+    <div class="row sub-header center-block">
+        <h2>账号列表</h2>
+        <button class="btn btn-material-purple-600 pull-right" ng-click="add()">添加新账号</button>
+    </div>
+
+    <p class="col-md-4 col-md-offset-4 alert alert-warning" ng-show="accounts.length == 0">没有账号，请添加一个。</p>
+
+  <div class="col-md-4 col-md-offset-4">
+    <ul class="list-group" ng-if="accounts">
+        <li class="alert alert-material-purple-600" ng-repeat="account in accounts">{{ account.userid }}</li>
+    </ul>
+  </div>
+
+<div class="col-md-4 col-md-offset-4">
+  <div class="panel panel-material-purple-600" ng-show="showForm">
+    <div class="panel-heading">
+      登陆
+    </div>
+    <div class="panel-body">
+      <form>
+          <div class="form-group">
+              <label>手机</label>
+              <input class="form-control" ng-model="phone" type="text"/>
+          </div>
+          <div class="form-group">
+              <label>密码</label>
+              <input class="form-control" ng-model="password" type="password"/>
+          </div>
+          <button class="btn btn-material-purple-600" ng-click="login()" type="submit">登陆</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</div>
